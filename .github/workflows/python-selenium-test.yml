@@ -19,5 +19,6 @@ jobs:
       run: |
           git config --global user.name 'pagvac'
           git config --global user.email 'pagvac@users.noreply.github.com'
+          git add ${{ env.FILE }}
           git commit -am "Screenshot"
           git push
