@@ -16,6 +16,9 @@ chromedriver_autoinstaller.install()  # Check if the current version of chromedr
                                       # and if it doesn't exist, download it automatically,
                                       # then add chromedriver to path
 
+website = 'https://github.com'
+file = os.environ['SCREENSHOT_FILE']
+
 chrome_options = webdriver.ChromeOptions()    
 # Add your options as needed    
 options = [
@@ -39,10 +42,10 @@ for option in options:
     
 driver = webdriver.Chrome(options = chrome_options)
 
-driver.get('http://github.com')
+driver.get(website)
 print(driver.title)
-with open('./GitHub_Action_Results.txt', 'w') as f:
-    f.write(f"This was written with a GitHub action {driver.title}")
+#with open('./GitHub_Action_Results.txt', 'w') as f:
+#    f.write(f"This was written with a GitHub action {driver.title}")
 
 try:
     driver.execute_script('document.getElementsByTagName("html")[0].style.scrollBehavior = "auto"')
@@ -50,7 +53,7 @@ try:
     current_url = driver.current_url
     WebDriverWait(driver, 15).until(EC.url_changes(current_url))
     #time.sleep(random.randint(3, 6))
-    driver.save_screenshot('website.png')
+    driver.save_screenshot(file)
     driver.quit()
 except NoSuchElementException:
     pass
