@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4   
+      uses: actions/checkout@v4
+    - name: Install dependencies
+      run: pip install selenium
     - name: Attempt to take screenshot of website
       run: python python-selenium-test.py
