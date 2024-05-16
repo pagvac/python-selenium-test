@@ -1,8 +1,12 @@
+import chromedriver_autoinstaller
 from selenium import webdriver
+from pyvirtualdisplay import Display
+from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-import chromedriver_autoinstaller
-from pyvirtualdisplay import Display
+from selenium.common.exceptions import NoSuchElementException
+
+
 display = Display(visible=0, size=(800, 800))  
 display.start()
 
