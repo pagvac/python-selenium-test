@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  python-email:
+  python-selenium:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Install dependencies
-      run: pip install selenium
+      run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
     - name: Attempt to take screenshot of website
       run: python python-selenium-test.py
