@@ -17,7 +17,6 @@ chromedriver_autoinstaller.install()  # Check if the current version of chromedr
                                       # then add chromedriver to path
 
 website = 'https://github.com'
-file = os.environ['SCREENSHOT_FILE']
 
 chrome_options = webdriver.ChromeOptions()    
 # Add your options as needed    
@@ -53,7 +52,7 @@ try:
     current_url = driver.current_url
     WebDriverWait(driver, 15).until(EC.url_changes(current_url))
     #time.sleep(random.randint(3, 6))
-    driver.save_screenshot(file)
+    driver.save_screenshot("./screenshot.png")
     driver.quit()
 except NoSuchElementException:
     pass
