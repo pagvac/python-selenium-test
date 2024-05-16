@@ -12,11 +12,13 @@ jobs:
     - name: Install dependencies
       run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
     - name: Attempt to take screenshot of website
-      run: python python-selenium-test.py
-    - name: Save screenshot
       run: |
-          git config --global user.name 'pagvac'
-          git config --global user.email 'pagvac@users.noreply.github.com'
+          python python-selenium-test.py
+          ls -al
+    - name: Commit & push screenshot to repo
+      run: |
+          git config --global user.name '${context.actor}'
+          git config --global user.email 'github-action-${context.actor}@users.noreply.github.com'
           git add --all
           git commit -am "Screenshot"
           git push
