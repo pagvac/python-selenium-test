@@ -8,6 +8,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support import expected_conditions as EC
 
+display = Display(visible=0, size=(800, 800))  
+display.start()
+
+chromedriver_autoinstaller.install() 
 
 website = "https://github.com"
 
