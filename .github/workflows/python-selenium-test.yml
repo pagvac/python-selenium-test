@@ -13,3 +13,9 @@ jobs:
       run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
     - name: Attempt to take screenshot of website
       run: python python-selenium-test.py
+    - name: Save screenshot
+      run: |
+          git config --global user.name 'pagvac'
+          git config --global user.email 'pagvac@users.noreply.github.com'
+          git commit -am "Screenshot"
+          git push
