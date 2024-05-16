@@ -1,4 +1,4 @@
-import chromedriver_autoinstaller
+import os, chromedriver_autoinstaller
 from selenium import webdriver
 from pyvirtualdisplay import Display
 from selenium.webdriver.common.by import By
