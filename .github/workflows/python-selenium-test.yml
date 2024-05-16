@@ -12,6 +12,8 @@ jobs:
     - name: Install dependencies
       run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
     - name: Attempt to take screenshot of website
+      env:
+          SCREENSHOT_FILE: ${{ env.FILE }}
       run: python python-selenium-test.py
     - name: Save screenshot
       run: |
