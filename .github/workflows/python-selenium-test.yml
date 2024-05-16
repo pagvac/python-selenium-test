@@ -5,6 +5,8 @@ on:
 
 jobs:
   python-selenium:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
